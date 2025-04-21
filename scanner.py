@@ -28,5 +28,12 @@ def scan_website(url):
 
 # مثال على الاستخدام
 if __name__ == "__main__":
-    target_url = input("Enter a website URL (e.g., https://example.com): ")
-    scan_website(target_url)   
+   import sys
+
+if len(sys.argv) > 1:
+    target_url = sys.argv[1]
+else:
+    print("يرجى إرسال رابط الموقع عند تشغيل البرنامج.")
+    sys.exit(1)
+
+    
