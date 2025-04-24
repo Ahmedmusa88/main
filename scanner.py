@@ -37,14 +37,17 @@ else:
     sys.exit(1)
 import openai
 
-openai.api_key = (from openai import OpenAI
-client = OpenAI()
+from openai import OpenAI
 
-response = client.responses.create(
-    model="gpt-4.1",
-    input="Write a one-sentence bedtime story about a unicorn."
+client = OpenAI(api_key="YOUR_API_KEY")
+
+response = client.chat.completions.create(
+    model="gpt-4",
+    messages=[
+        {"role": "user", "content": "Write a one-sentence bedtime story about a unicorn."}
+    ]
 )
 
-print(response.output_text)
-)
+print(response.choices[0].message.content)
+
     
