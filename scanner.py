@@ -35,5 +35,16 @@ if len(sys.argv) > 1:
 else:
     print("يرجى إرسال رابط الموقع عند تشغيل البرنامج.")
     sys.exit(1)
+import openai
 
+openai.api_key = (from openai import OpenAI
+client = OpenAI()
+
+response = client.responses.create(
+    model="gpt-4.1",
+    input="Write a one-sentence bedtime story about a unicorn."
+)
+
+print(response.output_text)
+)
     
