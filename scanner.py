@@ -50,5 +50,3 @@ response = openai.ChatCompletion.create(
 
 # Output the generated story
 print("🦄 Bedtime Story:", response['choices'][0]['message']['content'])
-
-    
